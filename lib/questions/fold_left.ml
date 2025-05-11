@@ -17,5 +17,13 @@ computational complexity and actual time taken.
 9. Comment on whether the use of folds in each of Questions 1–7 is good style.
 *)
 
-let print expenses budget =
-  print_endline (expenses ^ budget)
+open List
+
+let budget_after_expenses expenses budget =
+  budget - fold_left (fun acc el -> acc + el) 0 expenses
+
+let length lst =
+  fold_left (fun acc _ -> acc + 1) 0 lst
+
+let last lst =
+  fold_left

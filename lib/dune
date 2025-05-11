@@ -1,2 +1,3 @@
 (library
- (name book_more_ocaml))
+ (name book_more_ocaml)
+ (libraries questions))

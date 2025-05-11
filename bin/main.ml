@@ -1,1 +1,3 @@
-let () = print_endline "Hello, World!"
+open Questions
+
+let () = Fold_left.print "hola" " mundo"

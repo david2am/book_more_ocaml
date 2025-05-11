@@ -1,0 +1,4 @@
+(executable
+ (public_name book_more_ocaml)
+ (name main)
+ (libraries book_more_ocaml))

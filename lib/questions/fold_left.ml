@@ -24,6 +24,28 @@ let budget_after_expenses expenses budget =
 
 let length lst =
   fold_left (fun acc _ -> acc + 1) 0 lst
-
+  
 let last lst =
-  fold_left
+  fold_left (fun _ e -> e) 0 lst
+
+let reverse lst =
+  fold_left (fun acc e -> e::acc) [] lst
+
+let is_mem el lst =
+  fold_left (fun acc e ->  ( || ) (el = e) acc) false lst
+
+let join_string lst =
+  let aux acc = if acc = "" then "" else " " in
+  fold_left (fun acc e -> acc ^ (aux acc) ^ e) "" lst
+
+type 'a tree = Lf | Br of 'a * 'a tree * 'a tree
+
+let rec fold_tree f acc = function
+  | Lf -> acc
+  | Br (data, l, r) -> f data (fold_tree f acc l) (fold_tree f acc r)
+
+let tree_length tree =
+  fold_tree (fun _ l r -> 1 + l + r) 0 tree
+
+let tree_depth tree =
+  fold_tree (fun _ l r -> 1 + max l r) 0 tree

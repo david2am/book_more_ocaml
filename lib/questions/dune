@@ -1,3 +1,4 @@
 (library
  (name questions)
- (modules fold_left lazy_list))
+ (modules fold_left lazy_list records)
+ (libraries unix))

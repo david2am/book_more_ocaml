@@ -1,2 +1,4 @@
+open Questions.Records
 
-let () = print_endline "init"
+let () =
+  say_the_date ()
